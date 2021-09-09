@@ -27,8 +27,10 @@ PhotoPath = environment.PHOTO_URL;
   }
 
   refreshList(){
-    this.http.get<any>(environment.API_URL+'employee').subscribe(data => {this.employees = data})
-    this.http.get<any>(environment.API_URL+'department').subscribe(data => {this.departments = data})
+    this.http.get<any>(environment.API_URL+'employee')
+    .subscribe(data => {this.employees = data})
+    this.http.get<any>(environment.API_URL+'department')
+    .subscribe(data => {this.departments = data})
   }
 
   addClick(){
@@ -57,7 +59,8 @@ PhotoPath = environment.PHOTO_URL;
     PhotoFileName: this.PhotoFileName
 
     }
-    this.http.post(environment.API_URL+'employee',val).subscribe(res => { alert(res.toString());
+    this.http.post(environment.API_URL+'employee',val)
+    .subscribe(res => { alert(res.toString());
     this.refreshList();
     })
   }
@@ -70,7 +73,8 @@ PhotoPath = environment.PHOTO_URL;
     DateOfJoining: this.DateOfJoining,
     PhotoFileName: this.PhotoFileName
     }
-    this.http.put(environment.API_URL+'employee',val).subscribe(res => { alert(res.toString());
+    this.http.put(environment.API_URL+'employee',val)
+    .subscribe(res => { alert(res.toString());
     this.refreshList();
     })
   }
